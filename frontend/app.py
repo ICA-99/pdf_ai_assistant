@@ -6,7 +6,7 @@ BASE_URL = "https://pdf-ai-assistant-2x0t.onrender.com"
 
 
 st.set_page_config(
-    page_title="PDF AI Assistant by Anjan",
+    page_title="PDF AI Assistant",
     page_icon="🤖",
     layout="wide"
 )
@@ -15,7 +15,7 @@ st.set_page_config(
 # Header
 # ======================================================
 
-st.title("🤖 PDF AI Assistant")
+st.title("🤖 PDF AI Assistant by Anjan")
 
 st.markdown(
     """
