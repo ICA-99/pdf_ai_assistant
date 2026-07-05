@@ -15,7 +15,7 @@ st.set_page_config(
 # Header
 # ======================================================
 
-st.title("🤖 PDF AI Assistant by Anjan")
+st.title("🤖 PDF AI Assistant")
 
 st.markdown(
     """
