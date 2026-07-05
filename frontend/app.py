@@ -4,6 +4,7 @@ import base64
 
 BASE_URL = st.secrets["BASE_URL"]
 
+
 st.set_page_config(
     page_title="PDF AI Assistant",
     page_icon="🤖",
