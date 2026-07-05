@@ -1,12 +1,8 @@
 import streamlit as st
 import requests
 import base64
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-
-BASE_URL = os.getenv("BASE_URL")
+BASE_URL = st.secrets["BASE_URL"]
 
 st.set_page_config(
     page_title="PDF AI Assistant",
