@@ -1,8 +1,8 @@
 import streamlit as st
 import requests
-import base64
+import fitz
 
-BASE_URL = st.secrets["BASE_URL"]
+BASE_URL = "https://pdf-ai-assistant-2x0t.onrender.com"
 
 
 st.set_page_config(
@@ -193,22 +193,26 @@ else:
 
         st.subheader("📖 PDF Preview")
 
-        pdf_base64 = base64.b64encode(
-            st.session_state.pdf_bytes
-        ).decode()
+        pdf_document = fitz.open(
+            stream=st.session_state.pdf_bytes,
+            filetype="pdf"
+        )
 
-        pdf_display = f"""
-        <iframe
-            src="data:application/pdf;base64,{pdf_base64}"
-            width="70%"
-            height="500"
-            type="application/pdf">
-        </iframe>
-        """
+        page_number = st.number_input(
+            "Page",
+            min_value=1,
+            max_value=len(pdf_document),
+            value=1,
+            step=1
+        )
 
-        st.markdown(
-            pdf_display,
-            unsafe_allow_html=True
+        page = pdf_document.load_page(page_number - 1)
+
+        pix = page.get_pixmap(dpi=150)
+
+        st.image(
+            pix.tobytes("png"),
+            width="stretch"
         )
 
     st.write("")
