@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 
-from backend.services.pdf_loader import load_pdf
-from backend.services.chunker import documents_chunker
-from backend.services.embedding import create_embeddings, create_query_embedding
-from backend.services.vector_store import (
+from backend.pdf_loader import load_pdf
+from backend.chunker import documents_chunker
+from backend.embedding import create_embeddings, create_query_embedding
+from backend.vector_store import (
     create_collection,
     upsert_vectors,
     search_vectors,

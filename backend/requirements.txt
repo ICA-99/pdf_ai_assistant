@@ -1,9 +1,6 @@
-streamlit
 fastapi
 uvicorn
 python-multipart
-
-requests
 
 langchain
 langchain-core
